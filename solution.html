@@ -23,8 +23,10 @@
 
         currentIndex=imageIndex;
         //Otherwise update mainImage
+        if(currentIndex < 6){
         document.getElementById("mainImage").src='/images/Slide' +  currentIndex  + '.GIF';
-        return;
+        return;}
+        else {document.getElementById("mainImage").src='/images/Slide' +  currentIndex  + '.gif';}
     }
 </script>
 <title>Projectsolutions</title>
