@@ -51,7 +51,7 @@ Target application
 </h2>
 
 <p>
-  In this visualization we’d like to create a webapplication, which provides the user the possibility to understand and analyse the more complex dataset of the citybikeservice. For this purpose we’d like to use a dataset which offers data information about the most frequently used stations, the occupancy of the stations, damage reports, driven routes etc. After checking at <a href="http://www.citybikewien.at">citybikewien.at</a> we managed to find a csv-dataset which holds all stations with its properties. But we’re still missing a dataset which provides a specific view on the driven routes and damage reports. Thus we're dependent from other ressources we couldn't find yet. On the vda-course-website it is saying that there will be data, so we're quite confident to reach our goals. 
+  In this visualization we’d like to create a webapplication, which provides the user the possibility to understand and analyse the more complex dataset of the citybikeservice. For this purpose we’d like to use a dataset which offers data information about the most frequently used stations, the occupancy of the stations, damage reports, driven routes etc. After checking at <a href="http://www.citybikewien.at">citybikewien.at</a> we managed to find a csv-dataset which holds all stations with its properties. But we’re still missing a dataset which provides a specific view on the driven routes and damage reports. Thus we're dependent from other ressources we couldn't find yet. On the vda-course-website it is saying that there will be data, so we're quite confident to reach our goals. Update: We finally received the citybike-csv's. thanks!
  </p>
 
 
@@ -65,8 +65,31 @@ User
 
 
 <h2>
-
+Implementation
 </h2>
 
 <p>
+
+
+<ul>
+  <li> WebApplication for Desktop
+    <ul>
+      <li>FireFox, Chrome </li>
+      <li>Internet Explorer >= 10</li>
+</ul>
+</li>
+  <li> WebApplication for Desktop
+    <ul>
+      <li>FireFox, Chrome </li>
+      <li>Internet Explorer >= 10</li>
+</ul>
+</li>
+</ul>
+
+We want to build a modern Application which runs on every platform.  To accomplish this goal, we decided to build a Web Application which supports all modern web-browsers. 
+
+The Web Application will be written in JavaScript. JQuery will be used to keep the application browser independent and to save us from writing code for each separate web browser. The d3 toolkit will be used for creating charts and views. The Google Maps API allows us to create an interactive map where we can draw bicycle routes and provide the user with a familiar interface to work with.
+
+To increase the performance we need to split the datasets in parts and load them when needed. Therefore we're going to use C#.NET and Java.
+
 </p>
