@@ -6,7 +6,7 @@
     var currentIndex = 1;
 
     //NOTE: Set this value to the number of slides you have in the presentation.
-    var maxIndex=12;
+    var maxIndex=6;
 
     function swapImage(imageIndex){
         //Check if we are at the last image already, return if we are.
@@ -71,9 +71,17 @@
 <p> </br> </br>In this animation we'd like to show a basic solution attempt. In this case you can select a specific station. After clicking that station, severel paths will grow to the other stations, which are representet by different colours and stroke widths. So for example a red stroke line (which is quite thick) represents a really often used route between stations. Therefore a green and quite thin line represents a route that isn't used that often.  </p>
 <p> <b>Attention:</b> Due to highquality pictures the animation may need a couple of seconds to preload! </p>
 
-<img src="/images/Slide1.GIF" id="mainImage" name="mainImage" width="100%" height="100%" alt="">
+<div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-hover" >Protptype 1</button>
+  <a href="proto2.html"><button type="button" class="btn btn-default"  onClick="proto2.html">Prototype 2</button></a>
+  <a href="proto3.html"><button type="button" class="btn btn-default"  href="proto3.html">Prototype 3</button></a>
+</div>
 
-<a href="#" onclick="swapImage(0);"><img src="/images/first.png" border=0 alt="First"></a>
+</br>
+
+<img src="/images/Slide1.GIF" id="mainImage" href="#" onclick="swapImage(currentIndex+1);" name="mainImage" width="100%" height="520" alt="">
+
+<a href="#" onclick="swapImage(1);"><img src="/images/first.png" border=0 alt="First"></a>
 <a href="#" onclick="swapImage(currentIndex-1);"><img src="/images/left.png" border=0 alt="Back"></a>
 <a href="#" onclick="swapImage(currentIndex+1);"><img src="/images/right.png" border=0 alt="Next"></a>
 <a href="#" onclick="swapImage(maxIndex);"><img src="/images/last.png" border=0 alt="Last"></a>
