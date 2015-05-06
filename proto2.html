@@ -6,7 +6,7 @@
     var currentIndex = 1;
 
     //NOTE: Set this value to the number of slides you have in the presentation.
-    var maxIndex=6;
+    var maxIndex=4;
 
     function swapImage(imageIndex){
         //Check if we are at the last image already, return if we are.
@@ -24,9 +24,9 @@
         currentIndex=imageIndex;
         //Otherwise update mainImage
         if(currentIndex !=6){
-        document.getElementById("mainImage").src='/images/Slide' +  currentIndex  + '.GIF';
+        document.getElementById("mainImage").src='/images/proto2/Slide' +  currentIndex  + '.gif';
         return;}
-        else {document.getElementById("mainImage").src='/images/Slide' +  currentIndex  + '.gif';
+        else {document.getElementById("mainImage").src='/images/proto2/Slide' +  currentIndex  + '.gif';
         return;}
     }
 </script>
@@ -68,18 +68,17 @@
     <!--end nav-->
   </div>
 
-<p> </br> </br>In this animation we'd like to show a basic solution attempt. In this case you can select a specific station. After clicking that station, severel paths will grow to the other stations, which are representet by different colours and stroke widths. So for example a red stroke line (which is quite thick) represents a really often used route between stations. Therefore a green and quite thin line represents a route that isn't used that often.  </p>
-<p> <b>Attention:</b> Due to highquality pictures the animation may need a couple of seconds to preload! </p>
+
 
 <div class="btn-group" role="group" aria-label="...">
-  <a href="solution.html"><button type="button" class="btn btn-default" >Protptype 1</button></a>
+  <a href="solution.html"><button type="button" class="btn btn-default" >Prototype 1</button></a>
   <button type="button" class="btn btn-hover"  >Prototype 2</button></a>
   <a href="proto3.html"><button type="button" class="btn btn-default">Prototype 3</button></a>
 </div>
 
 </br>
 
-<img src="/images/Slide1.GIF" id="mainImage" name="mainImage" width="100%" height="520" alt="">
+<img src="/images/proto2/Slide1.gif" id="mainImage" href="#" onclick="swapImage(currentIndex+1);" name="mainImage" width="100%" height="520" alt="">
 
 <a href="#" onclick="swapImage(1);"><img src="/images/first.png" border=0 alt="First"></a>
 <a href="#" onclick="swapImage(currentIndex-1);"><img src="/images/left.png" border=0 alt="Back"></a>
@@ -89,4 +88,21 @@
  <!--<img src="images/animated.gif" alt="" align="right" style="margin-top:-80px" /> 
 <iframe src="http://docs.google.com/gview?url=ctbike.github.io/proto3.pptx&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>
 -->
-
+<p> </br> This prototype provides a station camparison on different parametern, like damagereports or driven routes or driven-kilometers etc. 
+<div id="imp">
+    <ul> 
+        <li> Advantages: 
+            <ul>
+                <li>The option to compare different stations </li>
+                <li> Includes detail information for damage reports </li>
+                <li> Every timespan is choosable </li>
+            </ul></li>
+            <li> Disadvantages:
+                <ul><li> Only two stations compareable </li>
+                    <li> No routes (driven) in the visualization </li>
+                    
+                </ul>
+            </li>
+            <li> Improvements:
+                <ul><li> Make more stations comparable.  </li> </ul> </li> </ul>
+            </div></p>
