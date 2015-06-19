@@ -241,7 +241,8 @@ function onStationClick(station, control){
 		//overViewPathToCoordinatesArray
 		//route(station.position, stations[i].position);
 	}
-	bubbleChart(1,12);
+	if(selectedStations.length > 0)
+		bubbleChart(1,12);
 }
 //calculates the route from A to B 
 /*
