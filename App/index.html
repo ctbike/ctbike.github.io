@@ -16,16 +16,68 @@
 	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
+	<link rel="stylesheet" href="/resources/demos/style.css">
+
+	  <script type="text/javascript">
+  	var helpTextStatus = 0;
+  	function helpTextChange()
+  	{
+  		if(helpTextStatus == 0)
+  		{
+  			$('#helpText').css("display", "block");
+  			helpTextStatus = 1;
+  			$("#btn_helpText").html('Hide Help');
+  		}
+  		else
+  		{
+  			$('#helpText').css("display", "none");
+  			helpTextStatus = 0;
+  			$("#btn_helpText").html('Show Help');
+  		}
+  	}
+  	var devBarStatus = 0;
+  	function devBarChange()
+  	{
+  			//developerInformation
+  		if(devBarStatus == 0)
+  		{
+  			$('#developerInformation').css("display", "block");
+  			devBarStatus = 1;
+  			$("#btn_DevInfo").html('Hide Developer Information');
+  		}
+  		else
+  		{
+  			$('#developerInformation').css("display", "none");
+  			devBarStatus = 0;
+  			$("#btn_DevInfo").html('Show Developer Information');
+  		}
+  	}
+  </script>
 
   </head>
+
+
+
   <body>
+
+
+
 	<div id="content">
 		<div id="left">
 			<div id="map-canvas"></div>
 		</div>
 		
 		<div id="right">
-			<div id="detailSpaceOne">Boxplot / Scatterplot/...
+			<div id="detailSpaceOne">
+				<div id="help">
+					<button id="btn_helpText" onclick="helpTextChange();" type="button">Show Help</button>
+					<button id="btn_DevInfo" onclick="devBarChange();" type="button">Show Developer Information</button>
+				</div>
+				<br/>
+				<div id="helpText" style="display:none; color:Red">
+					Single Click to get information about a station. You can select multiple stations by using CONTROL + (Left) Mouse Click. In this case the detail charts will be activated.
+				</div>
+				<br/>
 				<div id="series_chart_div" style="width: 100%; height: 300px;"></div>
 				<p>
   					<label for="amount">Month Range:</label>
@@ -34,8 +86,10 @@
 				<div id="slider-range" style="margin-left: 20%; width: 50%; text-align:center;"  ></div>
 				<div style="margin-bottom: 20px;"></div>
 				<div class="chart"></div>
-				<div id="selectedStations"></div>
-				<div id="someContent"></div>
+				<div id="developerInformation" style="display:none;">
+					<div id="selectedStations"></div>
+					<div id="someContent"></div>
+				</div>
 			</div>
 		</div>
 	</div>
