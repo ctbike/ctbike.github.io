@@ -25,7 +25,7 @@
             <li><a href="description.html">Project Description</a></li>
             <li><a href="solution.html">Project Solution Attempts</a></li>
             <li><a href="m3.html"> Milestone 3 </a></li>
-                        <li><a href="m4.html"> Milestone 4 </a></li>
+            <li><a href="m4.html"> Milestone 4 </a></li>
     <li><a href="imp.html">Project Implementation</a></li>
           </ul></li>
         <li><a href="team.html">Team</a>
@@ -44,55 +44,43 @@
 <div>
 <p> </br></br>
 
-<h2> A very brief reminder of our problem </h2></br>
-We want to build a WebApplication of the city bike service which helps users to explore the data interactively and intuitively. Our goal is, that the application can be used for data-driven journalism. 
-We are provided with a complex data set of the city bike service. Our challenge is now to observe the data and visualize important questions. </br>
-Just to provide you a faster entry point to our project, here are our previous prototypes: 
+<h2> Problem </h2></br>
+
+In the early stage of our visualization project we were provided with a complex dataset of the city bike service. Based on this various datasets we tried to fullfill our use-case and build a web application of the city bike service which helps to explore the quite obscure dataset in a self-explaining and interactive way. </br>
+<h3>Use Case </h3>
+When we've been developing and evaluating our possible target users, we decided, that we won't limit our visualization to a certain user group, but rather provide a visualization for all the people out there, which are curious and willing to consume information about the city bike service. Summarized we could say, that our visualization is based on the ideas of a data driven journalism report.</br></br>
+ <img src="images/data.jpg" alt="" />  </br>
+ 
 </p>
-<img src="images/proto.png" alt="" width="100%" />
+
 <p> 
 
 
 
-</br></br><h2>Changes to the original VIS design/work plan</h2></br>
-<li>Because of confusing overlapping of real route drawing, we decided to use point-to-point (air line) drawing. </li> 
-</br>
-<li>We tried to use an inbound circle and an outbound circle for each station to show the difference, but for most stations the in- and outbound rides are distributed equally which lead to more confusion then additional value for the user. So we agreed on using just one circle for the entire rides.</li> 
-</br>
-<li>As suggested in the feedback for our last milestone, we made the decision to provide a possibility to compare different stations. </li> 
-</br>
-<li>The last time our user scenario and user description was quite loose, so we worked on that and developed a new user scenario as descripted in the next chapter. </li> 
-</br>
+</br></br><h2>Solution Attempts</h2></br>
+
+In the beginning we created three possible low fidelity prototypes, in which we tried to look at the data in a different perspective. When we started to work on this project it was clear from the first moment that we'd like to integrate a mapview to our visualization. So every prototype of ours got at least a small map view in it. Here you can see a small thumbnail of the 3 low fidelity prototypes ( if you'd like to take a closer look at those prototypes just navigate to our "Solution Attempts" in the navigation bar in the top or click on the prototypes) :  </br></br>
+
+<a href="proto1.html"><img  src="images/proto.png" alt="" width="100%" /></a> </br>
 
 
 
-<h2>User Scenario </h2>
 </br>
-In the curriculum of media informatics you are forced to gain knowledge in different forms of journalism. We thought about several user scenarios until we thought about the fact that everybody could be our user, unless they have a computer and a keyboard ( which is necessary for selecting more stations) and they are willing to consume information. 
-As already described, we want to give the users an interactive and intuitive place to look into the city bike usage data. 
-We cleaned and filterd the data and are trying to develop our views to tell different stories about the service. Each user should be able to find his/her own story in the data and get the possibility to dig even deeper into it.
+After some feedback from the class and the professors we tried to build a high fidelity prototype, where we kind of pushed it to the limits of the datasets. We built a quite elaborate datamanipulation tool in C#.NET, which calculated data from different csv-files and provided a easily understandable JSON-file. In one of our first prototypes we'd the idea to build a scatterplot which shows us dependency between driven kilometers and the time spent on a bike. In our opinion this would've been a great chart to look at and to answer questions like "Are people driving faster in winter because it's cold?" or "Are people from the outer districs faster drivers, because they are used to drive longer routes?". </br>Unfortunately there have been some problems:</br>
+</br>
+<li>The google maps API only allows a certain amount of calls within a specific time range. </li></br>
+<li>If we would have loaded the whole necessery data in the beginning the JSON-file would have increased in size to a peak where we just couldn't warrant a smooth usage of our visualization.</li></br>
+<li>And last but not least, there've been always the problem that we didn't know anything about the driven routs except the startpoint and the endpoint. What happened in the middle, well, stays in the middle. For us, this wouldn't have been a huge problem, because the generated chart would've told a story anyway, but at least it was a limitation, which made us think about it.</li> </br> </br>
 
- <img src="images/data.jpg" alt="" /> 
- 
+
+ The attempt to map the damagereports data to specific station id's failed, so we had to delete our initially planned treechart and replace it with a less sophisticated linechart. At first we thought that the mapping would be possible for some of the stations, but as it turned out, the damagereports could just be mapped to a specific mechanic.  </br></br>
+ <img src="images/treemapcomparison.png" alt=""width ="100%" /> 
 </br>
 
-</br><h2>Progress</h2></br>
 
 
-The WebApplication includes JavaScript-Files, JavaScript Libraries, CSS Files, Data Files and Configuration Files.
-
-<h3>Providing the data </h3>
- Because the dataset we got in the beginning is quite distributed we had to think about a way to map the different datasets into a centralized and therefore easy usable datasource. We wrote a C#.NET tool to map the different dataset together, the tool loops through the files, maps them together and creates a JSON-File for the WebApplication. The JSONs hold information about stations, amount of rides and other stuff for example locations. 
- Starting with severel comprehensive datasets, it was quite hard to provide a small-sized source, that the runtime won't suffer from loading times. Here is a short look at a specific station: </br></br>
-
-<img src="images/json.png" alt="" align="center"/>
-
-<h3>Implementation details</h3>
-
-We have separate JavaScript-Files for the map and the charts. We tried to built the map and the charts as stand-alone modules to keep them exchangeable.  
-We are using JavaScript Libraries like jQuery, google maps API, google charts API and d3 to accomplish our different tasks.
-Our data files are JSONs and configuration XMLs. The XMLs are used by the WebApplication to load colours and other design information. Our idea was, to change parts of the design just in the XML without changing the code, it's faster and the error-rate keeps lower. </br></br>
-
+<h2>Implementation </h2>
+</br>
 <h5>The Map-View </h5></br>
 
 At the moment we've got an interactive map which shows us all the citybike stations. If you click on a station the lines between stations are drawn. These lines represent the trafficamount (represented through the 
@@ -102,19 +90,24 @@ one station, this is important for our comparable charts, which will be added at
 <img src="images/map.png" alt=""width="100%" />
 </br></br>
 
-<h5>The Treemap-View </h5></br>
-
-The TreeView mock-up chart uses the damage reports to provide the user with an overview about the damages. The user has the option to choose a district. Each node has a different size which 
-represents the amount of damage reports for the specific district. After a district has been selected the user sees nodes for each station in that district. The nodesize represents again 
-the amout of damage reports (for stations). Details about the damages are presented after a click on a station. Again, new nodes, this time each node is another (unique) damage, the size 
-is the frequency of the specific damage. It's quite hard to use the damage report dataset, because there is a lot of information missing. Most of the times, there is just a possibility to map a damagereport to a mechanic, which was treating this damage report, and not to a specific station. This view should additionaly function as a filter for the other charts. So if you select for example the 2. district, all of the stations in the second district should be marked as selected and all of the charts should be updated. </br></br>
-<img src="images/tree.png" alt="" width="100%"/>
-</br></br>
-
 <h5>The Bubblechart-View </h5></br>
 The Bubble-Chart gets the stations-ID from the clickable map, depending on which station is selected. It shows the correlation between incoming and outgoing rides, as well as the entire usage for the chosen stations. It is also possible to see the incoming and outgoing rides for specific months through the slider under the chart. This will also change the x- and y- axis's range. The color of the bubbles are dependent of their districts and the size of the entire usage. If two stations have the same color, then they're in the same district. Also there is a mouseover-effect to see a tooltip which holds the specific details. </br></br>
 <img src="images/bubble.png" alt="" width="100%"/>
 </br></br>
+
+<h5>The Histogram-View </h5></br>
+The histogram is a little trimmed version of the initially planned scatterplot, which should've shown the correlations between the kilometers of a driven route related to the time needed. However the bins of the histogram ( on the x-axis) are the minutes spent on the bike per ride. The y-axis shows us the amount of rides with this specific loan duration. Like the bubblechart, the histogram is affected by the month-picker. So we can look at the driven time durations for a specific month or just for the summer month.  </br></br>
+<img src="images/histo.png" alt="" width="100%"/>
+</br></br>
+
+<h5>The LineChart-View </h5></br>
+The line chart is also affected by the monthpicker and shows the annual progress of the damage-report amounts. With this view, we'd like to point out the most common damage reports in the city bike service and in which month they appear. 
+<img src="images/line.png" alt="" width="100%"/>
+</br></br>
+ 
+</br>
+
+</br>
 
 <h2>Major challenges/problems</h2></br>
 
@@ -128,11 +121,12 @@ The Bubble-Chart gets the stations-ID from the clickable map, depending on which
 <li>Last but not least there is a challenging circumstance in the fahrten.csv. Sometimes workers from the citybikeservice take bikes from full stations and deliver them to empty ones. As far as we know, we can't really distinguish the differences of normal bike incomes and incomes they've been performed by the "balancing-workers". We've a few solution attemps, but there is always a small disadvantage in those. For example, we could look if there has been a huge bike outbound in a specific range of time and all those bikes are returned at the same station. It's quite likely that a worker from the citybikeserver tried to hold balance between the stations, but on the other hands it's as likely as a group of people biking together.</li></br></br>
 
 
+<a href="http://ctbike.github.io/App/"><h6 width ="100%"> TIME FOR A LIVE DEMO </h6></a>
 
-<h2> Future outlooks </h2>
-We want to connect the map with the charts in an very intuitive way. The map should be our navigation point which triggers the detail view. The user should be able to start with little knowledge about the data by exploring the map and gets the possibility to "follow" the data by using the detail views. Of course we'd like to add some additional charts, but as long as we struggled with the damage reports dataset and the api-calls, it's not clear which views a realistic and which are not. </br></br>
 
-<img src="images/future.png" alt="" width="100%"/>
+
+<h2> Results and Analysis </h2></br>
+weisst w
 </br></br>
 
 <h2>Questions</h2></br>
