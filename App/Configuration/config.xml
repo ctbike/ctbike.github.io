@@ -1,8 +1,8 @@
 <Design>
 	<CityBikeImageUrl>Images/cbw_G.png</CityBikeImageUrl>
-	<HeatmapColor>green</HeatmapColor>
+	<HeatmapColor>yellow</HeatmapColor>
 	<HeatmapInitialOpacity>0.35</HeatmapInitialOpacity>
 	<HeatmapSelectedColor>blue</HeatmapSelectedColor>
 	<HeatmapSelectedOpacity>0.7</HeatmapSelectedOpacity>
-	<PathColorDefault>orange</PathColorDefault>
+	<PathColorDefault>#990099</PathColorDefault>
 </Design>

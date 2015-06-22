@@ -2,6 +2,8 @@
 	var sattel = [];
 	var licht = [];
 	var lenker = [];
+	var start = 1;
+	var end = 12;
 	var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 	
 	
@@ -37,10 +39,10 @@
 
 	
 	
-	
+	//google.load('visualization', '1.1', {packages: ['line']});
     google.setOnLoadCallback(drawChart);
 
-    function drawChart() {
+    function drawChart(start,end) {
 		
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Months');
@@ -48,18 +50,19 @@
       data.addColumn('number', 'Sattel');
       data.addColumn('number', 'Terminal Services');
 	  data.addColumn('number', 'Lenker');
+	  console.log(start);
 	  
-	  for(var i = 0; i < 12; i++){
+	  for(var i = start; i < end; i++){
 		  data.addRow([months[i], licht[i], sattel[i], schaden[i], lenker[i]])
 	  }
 
       var options = {
         chart: {
-          title: 'Damage report of the whole year',
-          subtitle: 'Ct-Bike Service'
+          title: 'Damage report in a time based linechart'
         },
-        width: 900,
-        height: 500
+       
+        
+        height: 400
       };
 
       var chart = new google.charts.Line(document.getElementById('linechart_material'));
@@ -67,8 +70,10 @@
       chart.draw(data, options);
     }
 	
-	function linechart(){
+	function linechart(start, end){
+	this.start = start;
+	
 	getDamage();
-	drawChart();
+	drawChart(start - 1,end);
 
 }

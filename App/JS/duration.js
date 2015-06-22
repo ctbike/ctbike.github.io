@@ -85,18 +85,15 @@ ind.length= 0;
 	var data = new google.visualization.arrayToDataTable(dataArray);
 	  data.sort('duration');
       var options = {
-        title: 'Histogram showing the amount of bike rides of a specific time duration',
+        legend: {position: 'none'},
+        chart:{ title:'Histogram showing the amount of bike rides of a specific time duration'},
         hAxis: {title: 'minutes driven', minValue: 0, maxValue: 120}, 
-      vAxis: {title: 'amount',
-       viewWindowMode:'explicit',
-              viewWindow:{
-              	min: 37999,
-                max:38000,
-                        }
+      vAxis: {title: 'amount'
             }
 ,
-       
-            bar: { groupWidth: '75%' }
+      
+        height: 400
+          //  bar: { groupWidth: '75%' }
       };
 
       var chart = new google.charts.Bar(document.getElementById('column_div'));

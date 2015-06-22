@@ -6,6 +6,7 @@ var stations = [];
 var heatMaps = [];
 var selectedStations = []; 
 var maxRidesToSingleStation = 0;
+var bubbleChartHelperSingleStation;
 
 var control = false;
 	$(document).on('keyup keydown', function(e) {

@@ -303,10 +303,12 @@ console.log("HELO");
 
 		getStation(selectedStations[i], start, end);
 	}
-
-	drawSeriesChart();
-
-
+	
+	if(selectedStations.length != 0)
+	{
+		drawSeriesChart();
+	}
+	
 }
 /*
 function drawChart(){
