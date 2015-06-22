@@ -5,20 +5,6 @@
 //selectedStations.push(1087);
 //selectedStations.push(1065);
 
-$(function() {
-$( "#slider-range" ).slider({
-  range: true,
-  min: 1,
-  max: 12,
-  values: [ 1,12],
-  slide: function( event, ui ) {
-    bubbleChart(ui.values[0], ui.values[1]);
-    $( "#amount" ).val( "Month: " + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-  }
-});
-$( "#amount" ).val( "Month " + $( "#slider-range" ).slider( "values", 0 ) +
-  " - " + $( "#slider-range" ).slider( "values", 1 ) );
-});
 
 
 var start= 1;
