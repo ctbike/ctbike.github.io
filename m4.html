@@ -109,18 +109,6 @@ The line chart is also affected by the monthpicker and shows the annual progress
 
 </br>
 
-<h2>Major challenges/problems</h2></br>
-
-<li>The biggest problem occured when we were looking at the damage report dataset. Until now we're not quite sure if we can manage to use that dataset in a good way. Most of the damagereports aren't mapable to a station, just to a mechanic. And we think, noone would like to see that "Mechanic B" repaired 10 bikeseats last month. So it's quite uncertain how we proceed here, because the option we've implemented right now only displays a few rows of the dataset, where the mapping can be performed.</li></br>
-
-<li> The Google Maps API is a powerful tool and it provides lots of useful functions, but to avoid getting their servers spammed, they limited the API-Calls in a specific time range to 20 calls. Then there is a timeout. So what we did is, that we saved the data locally in our JSON-file. In our first prototypes we decided to make a quite risky prediction, when we announced to implement a scatterplot which shows the time spent on the bike on the x-axis and the driven distance on the y-axis to make a presumption about which station is the fittest. So now we've the problem of limited API-Calls. A solution would be to save that data in our local json-file again, but this solution attempt just leads me to our next problem: </li></br>
-
-<li> We're trying to calculate a smart and compact json-file, because we'd like our visualization to run smooth and without any latency. At the moment our json-file consists of data woth 2.5MB which is quite enough for a webapplication in our point of view, but we're thinking about adding different distributed datasources to load just the data which is needed in this general scope. But as mentioned before, the scatterplot turned out to be tricky ( but let's say: not impossible)</li>
-</br>
-
-<li>Last but not least there is a challenging circumstance in the fahrten.csv. Sometimes workers from the citybikeservice take bikes from full stations and deliver them to empty ones. As far as we know, we can't really distinguish the differences of normal bike incomes and incomes they've been performed by the "balancing-workers". We've a few solution attemps, but there is always a small disadvantage in those. For example, we could look if there has been a huge bike outbound in a specific range of time and all those bikes are returned at the same station. It's quite likely that a worker from the citybikeserver tried to hold balance between the stations, but on the other hands it's as likely as a group of people biking together.</li></br></br>
-
-
 <a href="http://ctbike.github.io/App/"><h6 width ="100%"> TIME FOR A LIVE DEMO </h6></a>
 
 
@@ -130,9 +118,6 @@ weisst w
 </br></br>
 
 <h2>Questions</h2></br>
-
-<li>What do you think? Would you prefer to see the absolute damagereports per district visualized in the treemap or would you rather show the damage-reports relative to the amount of stations in this district?</li>
-<li>How much space would you plan for the map view? How much space for the different charts?</li>
 
 </br>
 
