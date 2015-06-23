@@ -76,6 +76,8 @@ After some feedback from the class and the professors we tried to build a high f
  The attempt to map the damagereports data to specific station id's failed, so we had to delete our initially planned treechart and replace it with a less sophisticated linechart. At first we thought that the mapping would be possible for some of the stations, but as it turned out, the damagereports could just be mapped to a specific mechanic.  </br></br>
  <img src="images/treemapcomparison.png" alt=""width ="100%" /> 
 </br>
+</br>
+We spent quite a while developing and working on a bundled edges algorithm. While developing this algorithm, we found out, that our algorithm would just apply in a static way. To solve a problem of this weight dynamically we just had to less time.  
 
 
 
@@ -114,10 +116,35 @@ The line chart is also affected by the monthpicker and shows the annual progress
 
 
 <h2> Results and Analysis </h2></br>
-weisst w
+
+The result is an interactive dashboard with different views and navigation.</br>
+
+The views:</br>
+     <li>Map</li>
+     <li>Bubblechart</li>
+     <li>Histogram</li>
+     <li>Linechart</li></br></br>
+
+Although the dashboard is working quite well, each view has some weaknesses.
+
+The map is sometimes a little laggy and overlay colours could confuse the user a little bit.
+By drawing lines from a selected station to every other station the user has to zoom in and out to get an idea about the traffic. The month slider doesn't interact with the map.</br>
+
+The Bubblechart is a good tool to compare the inbound and outbound frequency for some stations. Unfortunately, we weren't able to fix the axis and as a result the bubbles are jumping around.</br>
+
+The Historgram shows the amount of bike rides of a specific time duration.</br>
+We had problems with the axis as well.</br>
+
+The damage linechart gives information about the damage amount at specific months.</br>
+Because the damage report dataset is very hard to handle, we had to fix the types of the damages.</br>
+In the dataset there are too many different damage types to let the user pick from.</br>
+
+The general application could use some performance fixing and refactoring. At the moment the application runs in FireFox but we haven't tested other modern browsers yet.</br>
+
+
 </br></br>
 
-<h2>Questions</h2></br>
+
 
 </br>
 
